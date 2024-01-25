@@ -65,10 +65,16 @@ const uploadFileBy = async (url: string, file: File) => {
 	console.info('Uploading to: ', destUrl.data);
 
 	// save
-	const result = await fetch(destUrl.data, {
-		method: 'PUT',
-		body: file,
-	});
+	const result = await fetch(
+		`https://stgsangimportssane001.blob.core.windows.net/uploaded/${file.name}?${destUrl.data.blobSAS}`,
+		{
+			method: 'PUT',
+			body: file,
+			headers: {
+				'x-ms-blob-type': 'BlockBlob',
+			},
+		}
+	);
 
 	console.info('Result: ', result);
 

@@ -13,21 +13,22 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "front_end_rg" {
-  name     = "rg-frontend-sand-ne-001"
+resource "azurerm_resource_group" "product_service_rg" {
   location = "northeurope"
+  name     = "rg-product-service-sand-ne-001"
 }
 
-resource "azurerm_storage_account" "front_end_storage_account" {
-  name                     = "csrstgsandfrontendne001"
-  location                 = "northeurope"
+resource "azurerm_storage_account" "products_service_fa" {
+  name     = "stgsangproductsfanecsr"
+  location = "northeurope"
 
   account_replication_type = "LRS"
   account_tier             = "Standard"
   account_kind             = "StorageV2"
-  resource_group_name      = azurerm_resource_group.front_end_rg.name
 
-  static_website {
+  resource_group_name = azurerm_resource_group.product_service_rg.name
+
+    static_website {
     index_document = "index.html"
   }
 }
