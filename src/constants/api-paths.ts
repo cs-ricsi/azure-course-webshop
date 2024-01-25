@@ -1,7 +1,7 @@
 export const API_PATHS = {
-	product: 'https://ams-course-csr.azure-api.net/fa-products-service-ne-csr',
-	order: 'https://ams-course-csr.azure-api.net/fa-products-service-ne-csr',
-	import: 'https://ams-course-csr.azure-api.net/fa-products-service-ne-csr',
-	bff: 'https://ams-course-csr.azure-api.net/fa-products-service-ne-csr',
-	cart: 'https://ams-course-csr.azure-api.net/fa-products-service-ne-csr',
+	product: 'https://rg-product-service-apim-csr.azure-api.net/fa-products-service-ne-csr-001',
+	order: 'https://rg-product-service-apim-csr.azure-api.net/fa-products-service-ne-csr-001',
+	import: 'https://rg-product-service-apim-csr.azure-api.net/fa-imports-service-ne-001',
+	bff: 'https://rg-product-service-apim-csr.azure-api.net/fa-products-service-ne-csr-001',
+	cart: 'https://rg-product-service-apim-csr.azure-api.net/fa-products-service-ne-csr-001',
 };
